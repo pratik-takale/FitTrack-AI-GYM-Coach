@@ -1,5 +1,4 @@
 import streamlit as st
-from dotenv import load_dotenv
 import os
 import time
 import pandas as pd
@@ -17,8 +16,7 @@ from services.coaching.llm import LLMCoach
 from services.coaching.tts import TextToSpeech
 from services.coaching.voice_pipeline import VoicePipeline, autoplay_audio
 
-load_dotenv()
-api_key = os.environ.get("GROQ_API_KEY", "")
+api_key = st.secrets["GROQ_API_KEY"]
 
   
 def main():
